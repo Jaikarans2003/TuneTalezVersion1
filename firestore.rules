@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // DEVELOPMENT MODE: Allow all read and write operations
+    // WARNING: These rules are insecure and should only be used during development
+    // Make sure to implement proper security rules before deploying to production
+    match /{document=**} {
+      allow read, write: if true;
+    }
+    
+    // Production rules (commented out for development)
+    // Uncomment these and remove the development rules above when deploying to production
+    /*
+    // Function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Function to check if user is author
+    function isAuthor() {
+      return request.auth != null && 
+             exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'author';
+    }
+    
+    // Function to check if user is admin
+    function isAdmin() {
+      return request.auth != null && 
+             exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Function to check if the document belongs to the authenticated user
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Allow public read access to PDF documents, but only authors and admins can write
+    match /pdfs/{document=**} {
+      allow read: if true;
+      allow create, update: if isAuthenticated() && (isAuthor() || isAdmin());
+      allow delete: if isAuthenticated() && (isAuthor() || isAdmin());
+    }
+    
+    // Allow public read access to books collection, but only authors and admins can write
+    match /books/{document=**} {
+      allow read: if true;
+      allow create, update: if isAuthenticated() && (isAuthor() || isAdmin());
+      allow delete: if isAuthenticated() && (isAuthor() || isAdmin());
+    }
+    
+    // Allow access to users collection
+    match /users/{userId} {
+      // Users can read and write their own data
+      allow read: if isAuthenticated() && (isOwner(userId) || isAdmin());
+      
+      // Users can only write their own data, but cannot change their role
+      allow create: if isAuthenticated() && (isOwner(userId) || isAdmin());
+      allow update: if isAuthenticated() && (isOwner(userId) || isAdmin());
+      allow delete: if isAuthenticated() && isAdmin(); // Only admins can delete user accounts
+    }
+    */
+  }
+}
