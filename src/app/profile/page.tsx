@@ -16,8 +16,16 @@ export default function ProfilePage() {
 
   // Redirect if not logged in
   useEffect(() => {
+    // Only redirect if we're sure the user is not logged in (not during initial loading)
     if (!user && !loading) {
-      router.push('/auth/signin');
+      // Add a small delay to prevent immediate redirect during auth state changes
+      const redirectTimer = setTimeout(() => {
+        if (!user) {
+          router.push('/auth/signin');
+        }
+      }, 500);
+      
+      return () => clearTimeout(redirectTimer);
     }
   }, [user, loading, router]);
 
