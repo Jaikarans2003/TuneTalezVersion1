@@ -18,7 +18,9 @@ interface ShareButtonProps {
 const ShareButton = ({ title, text, url, thumbnailUrl, className = '', iconOnly = false, author = 'TuneTalez' }: ShareButtonProps) => {
   const [isSharing, setIsSharing] = useState(false);
 
-  const handleShare = async () => {
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    
     try {
       setIsSharing(true);
       

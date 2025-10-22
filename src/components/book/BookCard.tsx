@@ -37,18 +37,24 @@ const BookCard = ({ book, onDelete }: BookCardProps) => {
             unoptimized={true}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-between p-4">
-            <div className="self-end flex gap-2" onClick={(e) => e.stopPropagation()}>
-              <LikeButton bookId={book.id || ''} className="text-white hover:text-red-500" />
-              <SaveButton bookId={book.id || ''} className="text-white hover:text-primary" />
-              <ShareButton 
-                title={book.title}
-                text={`Check out "${book.title}" by ${book.author} on TuneTalez`}
-                url={`${typeof window !== 'undefined' ? window.location.origin : ''}/book/${book.id}`}
-                thumbnailUrl={book.thumbnailUrl}
-                author={book.author}
-                iconOnly={true}
-                className="text-white hover:text-primary"
-              />
+            <div className="self-end flex gap-2">
+              <div onClick={(e) => e.preventDefault()}>
+                <LikeButton bookId={book.id || ''} className="text-white hover:text-red-500" />
+              </div>
+              <div onClick={(e) => e.preventDefault()}>
+                <SaveButton bookId={book.id || ''} className="text-white hover:text-primary" />
+              </div>
+              <div onClick={(e) => e.preventDefault()}>
+                <ShareButton 
+                  title={book.title}
+                  text={`Check out "${book.title}" by ${book.author} on TuneTalez`}
+                  url={`${typeof window !== 'undefined' ? window.location.origin : ''}/book/${book.id}`}
+                  thumbnailUrl={book.thumbnailUrl}
+                  author={book.author}
+                  iconOnly={true}
+                  className="text-white hover:text-primary"
+                />
+              </div>
             </div>
             {/* Removed the "Read Now" button since the entire card is now clickable */}
           </div>

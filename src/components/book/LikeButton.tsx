@@ -53,7 +53,9 @@ export default function LikeButton({ bookId, className = '' }: LikeButtonProps) 
     checkIfLiked();
   }, [user, bookId]);
 
-  const toggleLike = async () => {
+  const toggleLike = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    
     if (!user) {
       // Redirect to login or show login modal
       alert('Please sign in to like books');
