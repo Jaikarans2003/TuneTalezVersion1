@@ -2,8 +2,8 @@
 
 import { useState, useRef, useEffect, ChangeEvent, FormEvent } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '@/firebase/config';
+import { db } from '@/firebase/config';
+import { uploadFileToR2 } from '@/r2/services';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import TextAlign from '@tiptap/extension-text-align';

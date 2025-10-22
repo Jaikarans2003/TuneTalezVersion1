@@ -14,11 +14,5 @@
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
-  },
-  "storage": [
-    {
-      "bucket": "tune-tales-7bc34.appspot.com",
-      "rules": "storage.rules"
-    }
-  ]
+  }
 }

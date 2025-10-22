@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { convertGsUriToHttpsUrl } from '@/utils/audioUtils';
-import { getStorage, ref } from 'firebase/storage';
-import { storage } from '@/firebase/config';
+import { getFileUrlFromR2 } from '@/r2/services';
 
 /**
  * Example component showing how to convert gs:// URIs to HTTPS URLs
@@ -52,7 +51,7 @@ export default function GsToHttpsExample() {
       setIsConverting(true);
       setError(null);
 
-      // Method 2: Manual conversion
+      // Method 2: Manual conversion using R2
       // Extract the path from the gs:// URI
       // Format: gs://bucket-name/path/to/file.mp3
       if (!gsUri.startsWith('gs://')) {
@@ -61,11 +60,8 @@ export default function GsToHttpsExample() {
 
       const path = gsUri.replace(/^gs:\/\/[^\/]+\//, '');
       
-      // Create a reference to the file
-      const storageRef = ref(storage, path);
-      
-      // Get the download URL
-      const url = await getStorage().ref(path).getDownloadURL();
+      // Get the download URL from R2
+      const url = await getFileUrlFromR2(path);
       
       setHttpsUrl(url);
     } catch (err: any) {

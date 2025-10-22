@@ -19,8 +19,7 @@ import { promisify } from 'util';
 import ffmpegImport from 'fluent-ffmpeg';
 import fetch from 'node-fetch';
 import { pipeline } from 'stream';
-import { getStorage, ref, getDownloadURL, uploadBytes } from 'firebase/storage';
-import { app } from '../firebase/config';
+import { uploadFileToR2, getFileUrlFromR2 } from '../r2/services';
 
 // Configure ffmpeg with error handling
 let ffmpeg = ffmpegImport;
@@ -44,9 +43,6 @@ try {
 
 // Promisify the stream pipeline
 const streamPipeline = promisify(pipeline);
-
-// Get Firebase Storage instance
-const storage = getStorage(app);
 
 /**
  * Helper function to ensure a directory exists
