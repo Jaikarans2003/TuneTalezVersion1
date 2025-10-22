@@ -203,7 +203,7 @@ function HomeContent() {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Explore Collection</span>
                   </h2>
                 </div>
-                <div className="flex space-x-3 animate-fade-in stagger-2">
+                {/* <div className="flex space-x-3 animate-fade-in stagger-2">
                   <button 
                     className="bg-[#2A2A2A] hover:bg-[#333] p-3 rounded-full transition-all duration-300 hover:scale-110"
                     suppressHydrationWarning
@@ -220,7 +220,7 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {books.length === 0 ? (
@@ -278,7 +278,7 @@ function HomeContent() {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Historical Books</span>
                   </h2> */}
                 </div>
-                <div className="flex space-x-3 animate-fade-in stagger-2">
+                {/* <div className="flex space-x-3 animate-fade-in stagger-2">
                   <button 
                     className="bg-[#2A2A2A] hover:bg-[#333] p-3 rounded-full transition-all duration-300 hover:scale-110"
                     suppressHydrationWarning
@@ -295,7 +295,7 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
@@ -322,7 +322,7 @@ function HomeContent() {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Academic Books</span>
                   </h2> */}
                 </div>
-                <div className="flex space-x-3 animate-fade-in stagger-2">
+                {/* <div className="flex space-x-3 animate-fade-in stagger-2">
                   <button 
                     className="bg-[#2A2A2A] hover:bg-[#333] p-3 rounded-full transition-all duration-300 hover:scale-110"
                     suppressHydrationWarning
@@ -339,7 +339,7 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
@@ -366,7 +366,7 @@ function HomeContent() {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Romance Books</span>
                   </h2> */}
                 </div>
-                <div className="flex space-x-3 animate-fade-in stagger-2">
+                {/* <div className="flex space-x-3 animate-fade-in stagger-2">
                   <button 
                     className="bg-[#2A2A2A] hover:bg-[#333] p-3 rounded-full transition-all duration-300 hover:scale-110"
                     suppressHydrationWarning
@@ -383,7 +383,7 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
@@ -410,7 +410,7 @@ function HomeContent() {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">Science Fiction</span>
                   </h2> */}
                 </div>
-                <div className="flex space-x-3 animate-fade-in stagger-2">
+                {/* <div className="flex space-x-3 animate-fade-in stagger-2">
                   <button 
                     className="bg-[#2A2A2A] hover:bg-[#333] p-3 rounded-full transition-all duration-300 hover:scale-110"
                     suppressHydrationWarning
@@ -427,7 +427,7 @@ function HomeContent() {
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
